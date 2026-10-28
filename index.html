@@ -2,10 +2,127 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name | EE & CS Portfolio</title>
+    <style>
+        /* CSS VARIABLES: Tweak these colors first to customize your site! */
+        :root {
+            --bg-color: #0f172a;       /* Dark slate background */
+            --card-bg: #1e293b;        /* Lighter slate for project cards */
+            --text-main: #f8fafc;      /* Crisp white for headings */
+            --text-muted: #94a3b8;     /* Gray for paragraphs */
+            --accent-ee: #38bdf8;      /* Cyan accent color for Electrical Eng */
+            --accent-cs: #4ade80;      /* Green accent color for Computer Sci */
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            background-color: var(--bg-color); 
+            color: var(--text-main); 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+        .container { max-width: 1000px; margin: 0 auto; }
+        
+        /* Header styling */
+        header { text-align: center; margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid var(--card-bg); }
+        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        .subtitle { color: var(--text-muted); font-size: 1.2rem; }
+        .links { margin-top: 1rem; }
+        .links a { color: var(--accent-ee); text-decoration: none; margin: 0 10px; font-weight: bold; }
+        .links a:hover { text-decoration: underline; }
+
+        /* Section layout */
+        .section-title { font-size: 1.8rem; margin: 2rem 0 1rem 0; display: flex; align-items: center; gap: 10px; }
+        .ee-title { color: var(--accent-ee); }
+        .cs-title { color: var(--accent-cs); }
+        
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
+        
+        /* Card styling */
+        .card { background-color: var(--card-bg); border-radius: 8px; padding: 1.5rem; transition: transform 0.2s; border-top: 4px solid transparent; }
+        .card:hover { transform: translateY(-5px); }
+        .ee-card { border-top-color: var(--accent-ee); }
+        .cs-card { border-top-color: var(--accent-cs); }
+        
+        .card h3 { margin-bottom: 0.5rem; font-size: 1.3rem; }
+        .card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem; }
+        .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .tag { font-size: 0.75rem; padding: 0.2rem 0.6rem; border-radius: 4px; background: rgba(255,255,255,0.05); font-weight: bold; }
+        .ee-tag { color: var(--accent-ee); }
+        .cs-tag { color: var(--accent-cs); }
+    </style>
 </head>
 <body>
-    <h1>Welcome to My Portfolio!</h1>
-    <p>Hello World! This is my new GitHub Pages site.</p>
+
+    <div class="container">
+        <header>
+            <h1>Your Name</h1>
+            <p class="subtitle">Electrical Engineering & Computer Science Student / Engineer</p>
+            <div class="links">
+                <a href="https://github.com" target="_blank">GitHub</a>
+                <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+                <a href="mailto:your.email@example.com">Email</a>
+            </div>
+        </header>
+
+        <!-- ELECTRICAL ENGINEERING SECTION -->
+        <h2 class="section-title ee-title">⚡ Electrical Engineering Projects</h2>
+        <div class="grid">
+            
+            <!-- EE Project 1 -->
+            <div class="card ee-card">
+                <h3>Autonomous Robotics Chassis</h3>
+                <p>Designed a custom 2-layer PCB utilizing an STM32 microcontroller, integrating motor drivers, I2C IMU sensors, and a power regulation subsystem circuit.</p>
+                <div class="tags">
+                    <span class="tag ee-tag">Altium Designer</span>
+                    <span class="tag ee-tag">Microcontrollers</span>
+                    <span class="tag ee-tag">PCB Design</span>
+                </div>
+            </div>
+
+            <!-- EE Project 2 -->
+            <div class="card ee-card">
+                <h3>Digital Signal Processor on FPGA</h3>
+                <p>Implemented an audio pass-through FIR filter system using Verilog on a DE10-Lite FPGA board, optimizing pipeline timing constraints.</p>
+                <div class="tags">
+                    <span class="tag ee-tag">Verilog</span>
+                    <span class="tag ee-tag">FPGA</span>
+                    <span class="tag ee-tag">Quartus</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- COMPUTER SCIENCE SECTION -->
+        <h2 class="section-title cs-title">💻 Computer Science Projects</h2>
+        <div class="grid">
+            
+            <!-- CS Project 1 -->
+            <div class="card cs-card">
+                <h3>Distributed Key-Value Store</h3>
+                <p>Built a fault-tolerant, sharded data store in Go utilizing the Raft consensus algorithm to handle node failures and maintain strict consistency.</p>
+                <div class="tags">
+                    <span class="tag cs-tag">Go / Golang</span>
+                    <span class="tag cs-tag">Distributed Systems</span>
+                    <span class="tag cs-tag">Raft</span>
+                </div>
+            </div>
+
+            <!-- CS Project 2 -->
+            <div class="card cs-card">
+                <h3>Real-time Object Detection Pipeline</h3>
+                <p>Developed a high-throughput Python video analytics application leveraging OpenCV and a modified YOLOv8 model deployed on a Linux edge device.</p>
+                <div class="tags">
+                    <span class="tag cs-tag">Python</span>
+                    <span class="tag cs-tag">OpenCV</span>
+                    <span class="tag cs-tag">Computer Vision</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
 </body>
 </html>
