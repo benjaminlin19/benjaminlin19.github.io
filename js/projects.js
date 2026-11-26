@@ -22,7 +22,7 @@ const SITE = {
   links: {                                  // replace with your real links
     github: "https://github.com/your-username",
     linkedin: "https://www.linkedin.com/in/your-username",
-    email: "mailto:you@example.com",
+    email: "mailto:linb19@mit.edu",
     resume: "assets/resume.pdf"             // put your PDF at assets/resume.pdf
   }
 };
