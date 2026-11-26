@@ -4,7 +4,7 @@
    ===================================================================== */
 const SITE = {
   name: "Benjamin Lin",                       // shown in the hero
-  tagline: "MIT EECS Student",
+  tagline: "EECS Portfolio",
   about: "Hi! I'm an MIT Course 6-5 Electrical Engineering with Computing student passionate about creating embedded systems, Machine Learning, FPGA, and PCB design.",
   // Quick facts shown under the hero. Add or remove rows freely.
   glance: [
