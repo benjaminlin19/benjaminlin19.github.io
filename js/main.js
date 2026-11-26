@@ -61,11 +61,16 @@ if ($("#project")) {
     $("#project").innerHTML = `<div class="pj-head wrap"><span class="num">${num(i)}</span>
       <span class="status">${p.status}</span><h1>${p.title}</h1><p class="lead">${p.summary}</p>
       <dl class="meta"><div><dt>Role</dt><dd>${p.role}</dd></div><div><dt>Timeline</dt><dd>${p.timeline}</dd></div><div><dt>Tools</dt><dd>${(p.tools || []).join(", ")}</dd></div></dl>
-      <nav class="toc" aria-label="On this page">${secs.map((s) => `<a href="#${s[0]}">${s[1]}</a>`).join("")}</nav></div>
-      ${secs.map((s) => `<section class="sec wrap reveal" id="${s[0]}"><h2>${s[1]}</h2><div>${s[2]}</div></section>`).join("")}
+      </div>
+      <div class="pj-body wrap"><nav class="toc" aria-label="On this page">${secs.map((s) => `<a href="#${s[0]}">${s[1]}</a>`).join("")}</nav><div class="pj-main">
+      ${secs.map((s) => `<section class="sec reveal" id="${s[0]}"><h2>${s[1]}</h2><div>${s[2]}</div></section>`).join("")}</div></div>
       <div class="pager wrap">${prev ? `<a href="project.html?id=${prev.id}">Previous: ${prev.title}</a>` : "<span></span>"}${next ? `<a href="project.html?id=${next.id}">Next: ${next.title}</a>` : ""}</div>`;
     // Render LaTeX (KaTeX scripts are deferred, so they are ready by now)
     $$("[data-tex]").forEach((el) => window.katex && katex.render(el.dataset.tex, el, { displayMode: true, throwOnError: false }));
+    // Section menu: highlight the link for the section currently on screen
+    const links = [...$$(".toc a")];
+    const spy = new IntersectionObserver((es) => es.forEach((e) => e.isIntersecting && links.forEach((a) => a.classList.toggle("on", a.hash === "#" + e.target.id))), { rootMargin: "-30% 0px -60% 0px" });
+    $$(".sec").forEach((s) => spy.observe(s));
     // Reading progress line
     const prog = $("#prog");
     addEventListener("scroll", () => (prog.style.transform = `scaleX(${scrollY / Math.max(1, document.documentElement.scrollHeight - innerHeight)})`), { passive: true });
