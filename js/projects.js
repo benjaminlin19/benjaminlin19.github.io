@@ -3,16 +3,10 @@
    Part 1: SITE (name, links, skills). Part 2: PROJECTS (one object each).
    ===================================================================== */
 const SITE = {
-  name: "Your Name",                       // shown in the hero
-  tagline: "EECS student designing PCBs, power electronics, and embedded systems.",
+  name: "Benjamin Lin",                       // shown in the hero
+  tagline: "MIT EECS Student",
   about: "Write 2-3 sentences: what you study, what you build, what you want next.",
   // Quick facts shown under the hero. Add or remove rows freely.
-  glance: [
-    { k: "school", v: "Your University" },
-    { k: "major", v: "Electrical Engineering and Computer Science" },
-    { k: "graduating", v: "20XX" },
-    { k: "focus", v: "PCB, power, embedded" }
-  ],
   skills: {
     "Design tools": ["KiCad", "LTspice", "Onshape"],
     "Languages": ["C++", "Python", "Java"],
