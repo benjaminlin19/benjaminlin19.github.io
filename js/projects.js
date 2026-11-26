@@ -8,10 +8,10 @@ const SITE = {
   about: "Write 2-3 sentences: what you study, what you build, what you want next.",
   // Quick facts shown under the hero. Add or remove rows freely.
   glance: [
-    { k: "school", v: "Your University" },
-    { k: "major", v: "Electrical Engineering and Computer Science" },
-    { k: "graduating", v: "20XX" },
-    { k: "focus", v: "PCB, power, embedded" }
+    { k: "Education", v: "Massachusetts Institute of Technology" },
+    { k: "Major", v: "Electrical Engineering with Computing" },
+    { k: "Graduation", v: "2030" },
+    { k: "Focus", v: "PCB Design, Power, Embedded Systems, FPGA, Machine Learning" }
   ],
   skills: {
     "Design tools": ["KiCad", "LTspice", "Onshape"],
