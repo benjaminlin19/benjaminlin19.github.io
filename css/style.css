@@ -125,3 +125,14 @@ h1,.block h2,.logo,.menu a{text-transform:uppercase;letter-spacing:.02em}
 .block h2{font-size:clamp(2.2rem,8vw,4.5rem);font-weight:500;color:var(--text);margin-bottom:32px}
 .card h3{font-family:var(--display);text-transform:uppercase;letter-spacing:.02em}
 .filters button,.sec h2{text-transform:uppercase;letter-spacing:.04em;font-size:.9rem}
+
+/* ----- project page: section menu stays visible while you scroll ----- */
+.sec{display:block;scroll-margin-top:calc(var(--bar) + 64px)}
+.pj-body .toc{position:sticky;top:calc(var(--bar) + env(safe-area-inset-top));z-index:10;margin:0 calc(var(--pad) * -1);background:#000;border-bottom:1px solid var(--line)}
+.toc a.on{color:var(--text)}
+@media(min-width:900px){
+  .pj-body{display:grid;grid-template-columns:190px 1fr;gap:56px;align-items:start}  /* 190px = menu width */
+  .pj-body .toc{top:calc(var(--bar) + 28px);flex-direction:column;overflow:visible;margin:28px 0 0;padding:0;background:none;border:0;border-left:1px solid var(--line)}
+  .pj-body .toc a{min-height:0;padding:7px 16px;margin-left:-1px;border-left:2px solid transparent}
+  .pj-body .toc a.on{border-color:var(--accent)}  /* yellow marker on the current section */
+}
