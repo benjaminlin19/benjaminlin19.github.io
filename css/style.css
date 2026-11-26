@@ -36,7 +36,7 @@ code{font-family:var(--mono);font-size:.85em}
   .menu a:hover{color:var(--text)}
 }
 /* ----- hero ----- */
-.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding-top:calc(var(--bar) + 40px);padding-bottom:40px}
+.hero{min-height:60svh;display:flex;flex-direction:column;justify-content:flex-end;padding-top:calc(var(--bar) + 40px);padding-bottom:40px}
 .eyebrow{color:var(--muted);font-size:.95rem;margin:0 0 16px}
 .eyebrow::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--accent);margin-right:10px}
 .hero h1{font-size:clamp(2.8rem,11vw,7.5rem);font-weight:300;letter-spacing:-.03em}
