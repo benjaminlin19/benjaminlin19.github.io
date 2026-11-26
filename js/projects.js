@@ -3,8 +3,8 @@
    Part 1: SITE (name, links, skills). Part 2: PROJECTS (one object each).
    ===================================================================== */
 const SITE = {
-  name: "Benjamin Lin",                       // shown in the hero
-  tagline: "MIT EECS Student",
+  name: "Your Name",                       // shown in the hero
+  tagline: "EECS student designing PCBs, power electronics, and embedded systems.",
   about: "Write 2-3 sentences: what you study, what you build, what you want next.",
   // Quick facts shown under the hero. Add or remove rows freely.
   glance: [
@@ -20,9 +20,9 @@ const SITE = {
   },
   learning: ["FPGA design (Verilog)", "Machine learning basics"],
   links: {                                  // replace with your real links
-    github: "https://github.com/benjaminlin19",
-    linkedin: "www.linkedin.com/in/benjaminylin",
-    email: "linb19@mit.edu",
+    github: "https://github.com/your-username",
+    linkedin: "https://www.linkedin.com/in/your-username",
+    email: "mailto:you@example.com",
     resume: "assets/resume.pdf"             // put your PDF at assets/resume.pdf
   }
 };
