@@ -80,3 +80,25 @@ if ($("#project")) {
 /* ---- fade in sections as they scroll into view ---- */
 const io = "IntersectionObserver" in window && new IntersectionObserver((es) => es.forEach((e) => e.isIntersecting && (e.target.classList.add("in"), io.unobserve(e.target))), { threshold: 0.08 });
 $$(".reveal").forEach((el) => (io ? io.observe(el) : el.classList.add("in")));
+
+/* ---- typewriter: any element with class="type" types out once when scrolled into view ---- */
+const typeObs = new IntersectionObserver((entries) => entries.forEach((e) => {
+  if (!e.isIntersecting) return;
+  const el = e.target, text = el.dataset.full;
+  typeObs.unobserve(el);                       // only type once
+  let n = 0;
+  const tick = () => {
+    el.textContent = text.slice(0, ++n);       // show one more character
+    if (n < text.length) setTimeout(tick, 30); // 30 = milliseconds per character
+  };
+  tick();
+}), { threshold: 0.6 });                       // starts when 60% of the text is on screen
+
+document.querySelectorAll(".type").forEach((el) => {
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return; // skip for people who limit motion
+  el.dataset.full = el.textContent;            // remember the full text
+  el.style.minHeight = el.offsetHeight + "px"; // reserve the space so the page doesn't jump
+  el.textContent = "";                         // clear it, then type it back in
+  typeObs.observe(el);
+});
+
