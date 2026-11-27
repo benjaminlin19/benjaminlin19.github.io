@@ -89,7 +89,7 @@ const typeObs = new IntersectionObserver((entries) => entries.forEach((e) => {
   let n = 0;
   const tick = () => {
     el.textContent = text.slice(0, ++n);       // show one more character
-    if (n < text.length) setTimeout(tick, 30); // 30 = milliseconds per character
+    if (n < text.length) setTimeout(tick, 10); // 10 = milliseconds per character
   };
   tick();
 }), { threshold: 0.6 });                       // starts when 60% of the text is on screen
